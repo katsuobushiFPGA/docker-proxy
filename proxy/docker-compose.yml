@@ -1,0 +1,14 @@
+version: "3.7"
+services:
+  proxy:
+    container_name: proxy
+    build:
+      context: .
+    ports:
+      - 80:80
+      - 443:443
+    privileged: true
+networks:
+  default:
+    external:
+      name: proxy-web-link
